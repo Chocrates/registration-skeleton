@@ -8,7 +8,7 @@ on:
         description: 'Full name of the registrant'
         required: true
       handle:
-        description: 'Github Handle without \@'
+        description: 'Github Handle without @'
         required: true
 jobs:
  registerUser:
