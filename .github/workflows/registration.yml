@@ -8,19 +8,19 @@ on:
         description: 'Full name of the registrant'
         required: true
       handle:
-        description: 'Github Handle without @'
+        description: 'Github Handle without \@'
         required: true
- jobs:
-  registerUser:
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
-        if [ ! -f "registrants.md" ]; then 
-          echo "# Registered Users" > registrants.md
-          echo "| Email | Name | GitHub Handle |" >> registrants.md
-        fi
-        echo "| ${{ github.event.inputs.email }} | ${{ github.event.inputs.fullName }} | ${{ github.event.inputs.handle }} |" >> registrants.md
+jobs:
+ registerUser:
+  runs-on: ubuntu-latest
+  steps:
+  - run: |
+      if [ ! -f "registrants.md" ]; then 
+        echo "# Registered Users" > registrants.md
+        echo "| Email | Name | GitHub Handle |" >> registrants.md
+      fi
+      echo "| ${{ github.event.inputs.email }} | ${{ github.event.inputs.fullName }} | ${{ github.event.inputs.handle }} |" >> registrants.md
         
-        git add registrants.md
-        git commit -m "Adding ${{ github.event.inputs.email }} to the registrant list"
-        git push
+      git add registrants.md
+      git commit -m "Adding ${{ github.event.inputs.email }} to the registrant list"
+      git push
