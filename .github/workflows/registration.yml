@@ -20,7 +20,11 @@ jobs:
         echo "| Email | Name | GitHub Handle |" >> registrants.md
       fi
       echo "| ${{ github.event.inputs.email }} | ${{ github.event.inputs.fullName }} | ${{ github.event.inputs.handle }} |" >> registrants.md
-        
-      git add registrants.md
-      git commit -m "Adding ${{ github.event.inputs.email }} to the registrant list"
-      git push
+  - uses: EndBug/add-and-commit@v4
+    with:
+      add: 'registrants.md'
+      author_name: Chris McIntosh
+      author_email: chocrates@github.com
+      message: "Adding ${{ github.event.inputs.email }} to the registrant list"
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
