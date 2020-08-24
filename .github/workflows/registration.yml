@@ -17,7 +17,7 @@ jobs:
     - name: debug
       run: |
         pwd
-        ls
+        ls -al
         echo "$GITHUB_WORKSPACE"
     - name: add user
       run: |
