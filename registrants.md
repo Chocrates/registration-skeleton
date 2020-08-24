@@ -14,3 +14,4 @@
 | chocrates@github.com | Bleh | new |  
 | chocrates@github.com | Chris | LatestHandleToTheExtreme |  
 | chocrates@github.com | Chris | newnewnew |  
+| chocrates@github.com | Chris | newnewnew |  
