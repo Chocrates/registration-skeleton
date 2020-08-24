@@ -15,7 +15,7 @@ You can fork this repository to create your own hackathon registration page.
 <div id="register">
         <h2>Get in Touch</h2>
         <div id="contact-form">
-                <form action="https://api.github.com/repos/chocrates/registration-skeleton/dispatches" method="POST">
+                <form action="https://registration-middlewear.azurewebsites.net/api/http-registration-trigger" method="POST">
                 <input type="hidden" name="event_type" value="registration" />
                 <input type="email" name="email" placeholder="Registration Email" required />
                 <input type="text" name="fullName" placeholder="FullName" required />
