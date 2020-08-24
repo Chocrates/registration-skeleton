@@ -1,5 +1,5 @@
 on: 
-  workspace_dispatch:
+  workflow_dispatch:
     inputs:
       email:
         description: 'Registration email'     
