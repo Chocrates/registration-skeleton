@@ -14,11 +14,8 @@ jobs:
  registerUser:
   runs-on: ubuntu-latest
   steps:
-    - name: debug
-      run: |
-        pwd
-        ls -al
-        echo "$GITHUB_WORKSPACE"
+    - name: Checkout repo
+      uses: actions/checkout@v2
     - name: add user
       run: |
         if [ ! -f "registrants.md" ]; then 
