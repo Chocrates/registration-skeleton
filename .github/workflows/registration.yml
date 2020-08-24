@@ -27,8 +27,8 @@ jobs:
     - uses: EndBug/add-and-commit@v4
       with:
         add: 'registrants.md'
-        author_name: Chris McIntosh
-        author_email: chocrates@github.com
+        author_name: registration-bot
+        author_email: 1758164+Chocrates@users.noreply.github.com
         message: "Adding ${{ github.event.inputs.email }} to the registrant list"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
