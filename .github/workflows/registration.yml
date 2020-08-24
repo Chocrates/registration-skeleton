@@ -14,17 +14,24 @@ jobs:
  registerUser:
   runs-on: ubuntu-latest
   steps:
-  - run: |
-      if [ ! -f "registrants.md" ]; then 
-        echo "# Registered Users" > registrants.md
-        echo "| Email | Name | GitHub Handle |" >> registrants.md
-      fi
-      echo "| ${{ github.event.inputs.email }} | ${{ github.event.inputs.fullName }} | ${{ github.event.inputs.handle }} |" >> registrants.md
-  - uses: EndBug/add-and-commit@v4
-    with:
-      add: 'registrants.md'
-      author_name: Chris McIntosh
-      author_email: chocrates@github.com
-      message: "Adding ${{ github.event.inputs.email }} to the registrant list"
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: debug
+      run: |
+        pwd
+        ls
+        echo "$GITHUB_WORKSPACE"
+    - name: add user
+      run: |
+        if [ ! -f "registrants.md" ]; then 
+          echo "# Registered Users" > registrants.md
+          echo "| Email | Name | GitHub Handle |" >> registrants.md
+        fi
+        echo "| ${{ github.event.inputs.email }} | ${{ github.event.inputs.fullName }} | ${{ github.event.inputs.handle }} |" >> registrants.md
+    - uses: EndBug/add-and-commit@v4
+      with:
+        cwd: "$GITHUB_WORKSPACE"
+        add: 'registrants.md'
+        author_name: Chris McIntosh
+        author_email: chocrates@github.com
+        message: "Adding ${{ github.event.inputs.email }} to the registrant list"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
