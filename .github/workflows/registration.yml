@@ -1,5 +1,5 @@
 on: 
-  repository_dispatch:
+  workspace_dispatch:
     inputs:
       email:
         description: 'Registration email'     
