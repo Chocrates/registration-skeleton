@@ -16,7 +16,6 @@ You can fork this repository to create your own hackathon registration page.
         <h2>Get in Touch</h2>
         <div id="contact-form">
                 <form action="https://registration-middlewear.azurewebsites.net/api/http-registration-trigger" method="POST">
-                <input type="hidden" name="event_type" value="registration" />
                 <input type="email" name="email" placeholder="Registration Email" required />
                 <input type="text" name="fullName" placeholder="FullName" required />
                 <input type="text" name="handle" placeholder="GitHub Handle without @" required />
