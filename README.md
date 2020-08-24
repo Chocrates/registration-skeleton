@@ -15,10 +15,11 @@ You can fork this repository to create your own hackathon registration page.
 <div id="register">
         <h2>Get in Touch</h2>
         <div id="contact-form">
-                <form action="https://api.github.com/repos/chocrates/registration-skeleton/actions/workflows/2297682/dispatches" method="POST">
-                <input type="email" name="email" placeholder="Registration Email" required>
-                <input type="text" name="fullName" placeholder="FullName" required>
-                <input type="text" name="handle" placeholder="GitHub Handle without @" required>
+                <form action="https://api.github.com/repos/chocrates/registration-skeleton/dispatches" method="POST">
+                <input type="hidden" name="event_type" value="registration" />
+                <input type="email" name="email" placeholder="Registration Email" required />
+                <input type="text" name="fullName" placeholder="FullName" required />
+                <input type="text" name="handle" placeholder="GitHub Handle without @" required />
                 <button type="submit">Send</button>
             </form>
         </div>
