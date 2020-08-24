@@ -21,6 +21,7 @@ jobs:
         if [ ! -f "registrants.md" ]; then 
           echo "# Registered Users" > registrants.md
           echo "| Email | Name | GitHub Handle |  " >> registrants.md
+          echo "| --- | --- | --- |  " >> registrants.md
         fi
         echo "| ${{ github.event.inputs.email }} | ${{ github.event.inputs.fullName }} | ${{ github.event.inputs.handle }} |  " >> registrants.md
     - uses: EndBug/add-and-commit@v4
