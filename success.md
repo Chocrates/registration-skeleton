@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Registration Complete"
-permalink: /success.md
+permalink: /success
 ---
 
 # Registration Complete
